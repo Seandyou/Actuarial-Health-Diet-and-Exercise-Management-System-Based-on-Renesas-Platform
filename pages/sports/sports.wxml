@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="title">选择运动</view>
+  <view class="sport-grid">
+    <view
+      class="sport-item {{activeIndex === index ? 'active' : ''}}"
+      wx:for="{{sportList}}"
+      wx:key="index"
+      bindtap="selectSport"
+      bindtouchstart="zoomIn"
+      bindtouchend="zoomOut"
+      data-index="{{index}}"
+    >
+      <image src="{{sportIcons[index]}}" mode="aspectFill" />
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>

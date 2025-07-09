@@ -1,0 +1,291 @@
+.container {
+  min-height: 100vh;
+  padding: 30rpx;
+  background-size: cover;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 52rpx;
+  font-weight: bold;
+  letter-spacing: 3rpx;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: slideIn 0.8s ease-out;
+}
+
+.product-list {
+  flex: 1;
+  height: 0;
+}
+
+.product-card {
+  width: 92%;
+  margin: 0 auto 30rpx;
+  padding: 25rpx;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 245, 250, 0.9));
+  border-radius: 25rpx;
+  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.1);
+  border: 2rpx solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: -2rpx;
+  left: -2rpx;
+  right: -2rpx;
+  bottom: -2rpx;
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  z-index: -1;
+  border-radius: 25rpx;
+  opacity: 0.8;
+}
+
+.product-card:hover {
+  transform: translateY(-12rpx) scale(1.02);
+  box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 25rpx;
+  border-radius: 15rpx;
+  transition: transform 0.3s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 34rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 30rpx;
+  color: #e74c3c;
+  margin-top: 15rpx;
+  font-weight: 500;
+}
+
+.add-btn {
+  width: 180rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0;
+  background: linear-gradient(135deg, #07c160, #06a14b);
+  color: #fff;
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.add-btn:hover {
+  transform: scale(1.08);
+}
+
+.footer {
+  padding: 20rpx 0;
+  text-align: center;
+}
+
+.cart-icon {
+  width: 70rpx;
+  height: 70rpx;
+  animation: pulse 2s infinite;
+}
+
+/* 购物车浮层样式 */
+.cart-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-content {
+  width: 85%;
+  max-height: 75vh;
+  background: linear-gradient(135deg, #f9f9f9, #ececec);
+  border-radius: 25rpx;
+  padding: 35rpx;
+  box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+
+.cart-title {
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 25rpx;
+}
+
+.cart-items {
+  max-height: 45vh;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 30rpx;
+}
+
+.cart-item-name {
+  flex: 1;
+  color: #333;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.quantity-btn {
+  /* === 修改处开始 === */
+  width: 30rpx !important; /* 原 36rpx，进一步缩小宽度，强制覆盖默认样式 */
+  height: 30rpx; /* 原 36rpx，同步缩小高度 */
+  line-height: 30rpx; /* 与新高度匹配 */
+  padding: 0;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border-radius: 15rpx; /* 原 18rpx，与新宽高匹配 */
+  font-size: 18rpx; /* 原 20rpx，进一步缩小字体 */
+  margin: 0 6rpx; /* 间距保持 6rpx */
+  /* === 修改处结束 === */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0; /* 移除 button 默认最小宽度 */
+}
+
+.quantity {
+  font-size: 28rpx;
+  color: #333;
+  width: 60rpx;
+  text-align: center;
+}
+
+.cart-item-price {
+  color: #e74c3c;
+  margin-right: 20rpx;
+}
+
+.delete-icon {
+  width: 40rpx;
+  height: 40rpx;
+  transition: transform 0.2s;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+.empty-cart {
+  text-align: center;
+  color: #999;
+  padding: 50rpx 0;
+  font-size: 30rpx;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.clear-btn {
+  width: 48%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1), inset 0 2rpx 4rpx rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, background 0.3s ease;
+  padding: 0;
+  text-align: center;
+}
+
+.clear-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a1b1b2, #8b9a9b);
+}
+
+.close-btn {
+  width: 48%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1), inset 0 2rpx 4rpx rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s ease, background 0.3s ease;
+  padding: 0;
+  text-align: center;
+}
+
+.close-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ee6757, #d35447);
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-30rpx); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

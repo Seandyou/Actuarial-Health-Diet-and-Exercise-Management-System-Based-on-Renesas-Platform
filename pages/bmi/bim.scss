@@ -1,0 +1,74 @@
+.container {
+  padding: 20rpx;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.input-group {
+  margin-bottom: 20rpx;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-group text {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+  flex: 1;
+  text-align: left;
+}
+
+.input-group input {
+  padding: 15rpx;
+  font-size: 28rpx;
+  width: 60%;
+  margin-left: 10rpx;
+  border-radius: 5rpx;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.calculate-btn {
+  padding: 15rpx;
+  font-size: 26rpx;
+  background-color: #22a7f5;
+  color: white;
+  width: 80%;
+  margin-top: 20rpx;
+  border-radius: 5rpx;
+  border: none;
+}
+
+.result {
+  margin-top: 30rpx;
+}
+
+.result text {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.result view {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 圆形按钮样式 */
+.recipe-btn {
+  width: 120rpx;  /* 增大宽度 */
+  height: 100rpx;  /* 增大高度 */
+  border-radius: 100rpx;  /* 设置为半径的一半，确保完全圆形 */
+  background-color: #FF8C00;
+  color: white;
+  font-size: 48rpx;
+  border: none;
+  margin-top: 60rpx;
+}

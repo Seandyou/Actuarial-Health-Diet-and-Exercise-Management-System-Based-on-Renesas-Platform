@@ -1,0 +1,160 @@
+
+page{
+  height: 100vh;
+  background-color: #fff !important;
+  padding: 16rpx;
+  box-sizing: border-box;
+
+
+  display: flex;
+  flex-direction: column;
+
+  view{
+    &:nth-child(n+2){
+      margin-top: 12rpx;
+    }
+  }
+}
+
+//轮播图区域
+.swiper{
+  border-radius: 10rpx;
+  overflow: hidden;
+
+
+  swiper{
+    height: 400rpx;
+    background-color: skyblue;
+
+    swiper-item{
+
+      image{
+        width: 100%;
+        height: 120%;
+        border-radius: 10rpx;
+      }
+   
+    }
+  }
+}
+
+
+
+.info{
+  display: flex;
+  //布局
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+}
+ 
+.good-nav{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 24rpx,16rpx;
+  border-radius: 10rpx;
+  view{
+
+
+    margin: 0% !important;
+    navigator{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     
+    }
+
+
+    image{
+      width: 80rpx;
+      height: 80rpx;
+    }
+
+    text{
+      font-size: 24rpx;
+      margin-top: 12rpx;
+    }
+  }
+}
+
+//推荐商品区域
+.good-hot{
+  background-color: #fff;
+  padding: 16rpx;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+
+  .scroll-x{
+     width: 100%;
+     white-space: nowrap;
+    
+  }
+
+  view{
+    display: inline-block;
+    width: 380rpx;
+    height: 440rpx;
+    margin-right:16rpx;
+  
+    .good-item{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      text{
+        &:nth-of-type(1){
+          font-weight: bold;
+        }
+      }
+    }
+  
+
+    image{
+      width:100%;
+      height: 420rpx;
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}
+// .scroll-x{
+//   width: 100%;
+//   white-space: nowrap;
+//   background-color: skyblue;
+
+//   view{
+//     display:inline-block;
+//     width: 300rpx;
+//     height: 80rpx;
+
+//     &:last-child{
+//       background-color: lightcoral;
+//     }
+
+//     &:first-child{
+//       background-color: lightgreen;
+//     }
+//   }
+// }
+
+// .scroll-y{
+//   height:400rpx;
+//   background-color: skyblue;
+//   margin-top:10rpx; 
+
+//   view{
+//     height: 400rpx;
+//     &:last-child{
+//       background-color: lightcoral;
+//     }
+
+//     &:first-child{
+//       background-color: lightgreen;
+//     }
+//   }
+// }

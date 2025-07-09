@@ -1,0 +1,69 @@
+{
+  "entryPagePath": "pages/index/index",
+  "pages": [
+    "pages/index/index",
+    "pages/cate/cate",
+    "pages/cart/cart",
+    "pages/profile/profile",
+    "pages/list/list",
+    "pages/signIn/signIn",
+    "pages/bmi/bim",
+    "pages/sports/sports",
+    "pages/sport-detail/sport-detail",
+    "pages/step-counter/step-counter",
+    "pages/food/food"  
+  ],
+
+ 
+
+  "window": {
+    "navigationBarTitleText": "精算健康",
+    "navigationBarBackgroundColor": "#00af92",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#efefef", 
+    "backgroundTextStyle":"dark"
+  },
+  "tabBar": {
+    "selectedColor": "#3514f",
+    "color": "#666",
+    "backgroundColor": "#efefef",
+    "borderStyle":"black",
+    "position": "bottom",
+    "list":[
+      {
+        "text":"首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "/assets/tabbar/index.png",
+        "selectedIconPath": "/assets/tabbar/index-active.png"
+      },
+
+      {
+        "text":"食谱",
+        "pagePath": "pages/cate/cate",
+        "iconPath": "/assets/tabbar/cate.png",
+        "selectedIconPath": "/assets/tabbar/cate-active.png"
+      },
+
+      {
+        "text":"购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "/assets/tabbar/cart.png",
+        "selectedIconPath": "/assets/tabbar/cart-active.png"
+      },
+
+      {
+        "text":"我的",
+        "pagePath": "pages/profile/profile",
+        "iconPath": "/assets/tabbar/profile.png",
+        "selectedIconPath": "/assets/tabbar/profile-active.png"
+      }
+
+
+    ]
+  },
+
+  
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+
+}

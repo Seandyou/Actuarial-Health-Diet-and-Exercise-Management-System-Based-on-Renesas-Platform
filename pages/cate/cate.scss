@@ -1,0 +1,323 @@
+/* 全局容器 */
+.options-box {
+  padding: 20rpx;
+  background-color: #FFFFFF;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+  height: 700rpx; /* 增大适应更多内容 */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  width: 100%;
+  height: 80rpx;
+  padding: 0 25rpx;
+  margin-bottom: 25rpx;
+  background-color: #F0F2F5;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  box-shadow: inset 0 2rpx 4rpx rgba(0, 0, 0, 0.05);
+}
+
+.food-scroll-view {
+  max-height: 600rpx; /* 增大显示更多条目 */
+  width: 100%;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+  padding: 15rpx 10rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 其他样式保持不变 */
+
+.container {
+  min-height: 100vh;
+  padding: 40rpx 30rpx; /* 更大内边距，呼吸感 */
+  background: linear-gradient(180deg, #E8F0F6 0%, #F2F7FA 50%, #F9FBFD 100%); /* 三段渐变 */
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%); /* 微妙光晕 */
+  opacity: 0.6;
+}
+
+/* 餐食框 */
+.meal-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25rpx 30rpx; /* 更大内边距 */
+  margin-bottom: 25rpx;
+  border-radius: 24rpx; /* 更大圆角 */
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.06); /* 更深阴影 */
+  position: relative;
+  height: 130rpx; /* 稍高 */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meal-box:hover {
+  transform: translateY(-6rpx); /* 更高悬浮 */
+  box-shadow: 0 12rpx 24rpx rgba(0, 0, 0, 0.12);
+}
+
+.meal-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.meal-icon {
+  width: 48rpx; /* 更大图标 */
+  height: 48rpx;
+  margin-right: 20rpx;
+  transition: transform 0.3s ease;
+}
+
+.meal-box:hover .meal-icon {
+  transform: scale(1.1); /* 悬停放大 */
+}
+
+.meal-title {
+  font-size: 36rpx; /* 更大字体 */
+  font-weight: 600;
+  color: #2C3E50; /* 深蓝灰 */
+  letter-spacing: 1rpx;
+}
+
+.meal-right {
+  flex: 1;
+  text-align: right;
+}
+
+.meal-calories {
+  font-size: 30rpx; /* 更大 */
+  color: #7F8C8D; /* 柔和灰 */
+  font-weight: 500;
+}
+
+.progress-bar-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rpx; /* 更粗 */
+  background-color: #E9ECEF;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5rpx;
+  transition: width 0.5s ease; /* 更平滑 */
+}
+
+/* 选项框 */
+.options-box {
+  padding: 25rpx 30rpx; /* 更大内边距 */
+  background: linear-gradient(135deg, #FFFFFF 0%, #F9FCFE 100%); /* 微渐变 */
+  margin-bottom: 25rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 14rpx rgba(0, 0, 0, 0.06);
+  height: 420rpx; /* 稍高 */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-input {
+  width: 100%;
+  height: 70rpx; /* 更高 */
+  padding: 0 25rpx;
+  margin-bottom: 25rpx;
+  background-color: #F0F2F5;
+  border-radius: 35rpx; /* 更大圆角 */
+  font-size: 28rpx; /* 更大字体 */
+  color: #333;
+  box-shadow: inset 0 2rpx 4rpx rgba(0, 0, 0, 0.05); /* 内阴影 */
+}
+
+.food-scroll-view {
+  max-height: 300rpx;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 15rpx; /* 更大内边距 */
+  border-bottom: 1rpx solid #F0F0F0;
+  width: 100%;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.food-item:hover {
+  background-color: #F9FAFC; /* 悬停背景 */
+}
+
+.food-name {
+  font-size: 30rpx; /* 更大 */
+  color: #34495E; /* 深蓝灰 */
+  flex: 1 1 75%;
+  min-width: 150rpx;
+  margin-right: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-weight: 500;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  flex: 0 0 25%;
+  justify-content: flex-end;
+  max-width: 180rpx; /* 更大空间 */
+}
+
+.counter-btn {
+  width: 48rpx; /* 显著增大 */
+  height: 40rpx; /* 更高 */
+  line-height: 40rpx; /* 与高度一致 */
+  padding: 0;
+  background: linear-gradient(135deg, #4CAF50, #45A049);
+  color: #fff;
+  border-radius: 20rpx; /* 更大圆角 */
+  font-size: 24rpx; /* 更大符号 */
+  margin: 0 6rpx; /* 更大间距 */
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1); /* 更深阴影 */
+  transform: scaleX(0.5); /* 视觉宽度约 24rpx */
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.counter-btn[disabled] {
+  background: #B0BEC5;
+  opacity: 0.7;
+}
+
+.counter-btn:hover {
+  transform: scaleX(0.5) scale(1.1); /* 悬停放大 */
+}
+
+.counter-text {
+  font-size: 28rpx; /* 更大 */
+  color: #333;
+  width: 40rpx; /* 与按钮高度一致 */
+  text-align: center;
+  font-weight: 500;
+}
+
+.total-calories {
+  text-align: center;
+  font-size: 40rpx; /* 更大 */
+  font-weight: 600;
+  color: #2C3E50;
+  margin: 50rpx 0; /* 更大外边距 */
+  padding: 25rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  box-shadow: 0 6rpx 14rpx rgba(0, 0, 0, 0.06);
+}
+
+.reset-btn-container {
+  text-align: center;
+  margin-top: 50rpx; /* 增大顶部间距，与上方内容拉开距离 */
+  padding: 0 30rpx; /* 与整体容器对齐 */
+}
+
+/* 重置按钮 */
+.reset-btn {
+  width: 90%; /* 增大到接近全屏宽度 */
+  height: 90rpx; /* 更高，更显眼 */
+  background: linear-gradient(135deg, #FF5722, #F4511E);
+  color: #fff;
+  border-radius: 45rpx;
+  font-size: 34rpx; /* 更大字体 */
+  font-weight: 500;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex; /* 使用 flexbox 确保文字居中 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  transition: transform 0.2s ease;
+  border: none; /* 移除默认边框 */
+  padding: 0; /* 移除默认内边距 */
+}
+
+.reset-btn:hover {
+  transform: scale(1.05);
+}
+
+/* 运动消息容器（包含文字和按钮） */
+/* 前面的样式保持不变，直到 .reset-btn:hover */
+
+/* 运动消息容器（包含文字和按钮） */
+.exercise-message {
+  margin-top: 70rpx; /* 与重置按钮的分离距离不变 */
+  text-align: center;
+  padding: 30rpx;
+  background-color: #FFF3E0;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 运动提示文字 */
+.exercise-text {
+  font-size: 38rpx;
+  color: #E65100;
+  margin-bottom: 50rpx; /* 增大与下方按钮的间距，从 25rpx 到 35rpx */
+  font-weight: 500;
+}
+
+/* 运动按钮容器 */
+.exercise-btn-container {
+  display: block;
+}
+
+/* 去运动按钮 */
+.exercise-btn {
+  width: 240rpx; /* 减小宽度，从 300rpx 到 240rpx */
+  height: 70rpx; /* 减小高度，从 90rpx 到 70rpx */
+  background: linear-gradient(135deg, #4CAF50, #45A049);
+  color: #fff;
+  border-radius: 35rpx; /* 圆角与高度一半匹配 */
+  font-size: 30rpx; /* 减小字体，从 34rpx 到 30rpx */
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  border: none;
+  padding: 0;
+}
+
+.exercise-btn:hover {
+  transform: scale(1.05);
+}
+
+.exercise-btn:hover {
+  transform: scale(1.05);
+}

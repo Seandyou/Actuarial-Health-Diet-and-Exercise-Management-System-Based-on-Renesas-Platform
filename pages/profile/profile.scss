@@ -1,0 +1,214 @@
+.container {
+  min-height: 100vh;
+  padding: 40rpx 30rpx;
+  background: linear-gradient(180deg, #E3ECF5 0%, #F0F5FA 50%, #F7FAFD 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0.6;
+}
+
+/* 用户信息区域 */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 30rpx;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F9FCFE 100%);
+  border-radius: 30rpx;
+  box-shadow: 0 10rpx 24rpx rgba(0, 0, 0, 0.08);
+  margin-bottom: 50rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar-container {
+  position: relative;
+  margin-right: 30rpx;
+}
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+  background-color: #E9ECEF;
+  border: 6rpx solid #FFFFFF;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.06);
+}
+
+.avatar-ring {
+  position: absolute;
+  top: -8rpx;
+  left: -8rpx;
+  width: 176rpx;
+  height: 176rpx;
+  border: 4rpx solid transparent;
+  border-top-color: #4CAF50;
+  border-radius: 88rpx;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.user-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* 改为垂直布局 */
+  align-items: flex-start; /* 左对齐 */
+}
+
+.nickname {
+  font-size: 44rpx; /* 更大字体 */
+  font-weight: 700;
+  color: #1F2A44;
+  letter-spacing: 2rpx;
+  width: 100%; /* 独占一行 */
+  text-align: left;
+}
+
+.signature {
+  font-size: 28rpx;
+  color: #7F8C8D;
+  margin-top: 12rpx; /* 间距稍减 */
+  font-style: italic;
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+  width: 100%;
+  text-align: left; /* 与昵称对齐 */
+}
+
+/* 功能卡片列表 */
+.card-list {
+  flex: 1;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 36rpx;
+  background: #FFFFFF;
+  border-radius: 26rpx;
+  box-shadow: 0 8rpx 18rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 30rpx;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8rpx);
+  box-shadow: 0 12rpx 24rpx rgba(0, 0, 0, 0.12);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10rpx;
+  height: 100%;
+  background: linear-gradient(180deg, #4CAF50, #45A049);
+  transition: width 0.3s ease;
+}
+
+.card:hover::before {
+  width: 14rpx;
+}
+
+.card-icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 30rpx;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.15);
+}
+
+.card-title {
+  font-size: 36rpx;
+  color: #34495E;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  flex: 1;
+}
+
+.card-arrow {
+  font-size: 36rpx;
+  color: #95A5A6;
+  margin-left: 20rpx;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-arrow {
+  transform: translateX(10rpx);
+}
+
+/* 全屏按钮 */
+.action-btn-container {
+  text-align: center;
+  margin-top: 60rpx;
+  padding: 0 30rpx;
+}
+
+.action-btn {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx; /* 高度与行高一致，确保垂直居中 */
+  background: linear-gradient(135deg, #FF8A80 0%, #F4511E 100%);
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #FFFFFF;
+  box-shadow: 0 12rpx 28rpx rgba(0, 0, 0, 0.16);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* 使用 flex 确保文字水平居中 */
+  align-items: center;
+  justify-content: center; /* 水平垂直居中 */
+  padding: 0; /* 移除默认内边距 */
+  border: none; /* 移除边框 */
+}
+
+.action-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.action-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 14rpx 32rpx rgba(0, 0, 0, 0.2);
+}

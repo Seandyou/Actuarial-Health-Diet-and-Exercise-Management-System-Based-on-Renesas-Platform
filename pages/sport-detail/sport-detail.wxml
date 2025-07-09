@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <text>{{sport}}</text>
+  </view>
+  <view class="sport-icon">
+    <image src="{{sportIcons[index]}}" mode="aspectFill" />
+  </view>
+  <view class="sport-data card">
+    <view>{{dataLabel1}}：{{dataValue1}} {{dataUnit1}}</view>
+    <view>{{dataLabel2}}：{{dataValue2}} {{dataUnit2}}</view>
+    <view>时长：{{duration}} 分钟</view>
+    <!-- 跑步特定目标和计时 -->
+    <view wx:if="{{sport === '跑步' && isRunning}}">
+      <text>目标距离：{{targetDistance}} 公里</text>
+      <text>计时：{{timerDisplay}}</text>
+    </view>
+  </view>
+  <!-- 跑步时的目标距离输入 -->
+  <view wx:if="{{sport === '跑步' && !isRunning && showTargetInput}}" class="target-input card">
+    <input type="number" bindinput="setTargetDistance" placeholder="请输入目标距离（公里）" />
+    <button bindtap="confirmTarget">确认</button>
+  </view>
+  <view class="buttons">
+    <button bindtap="toggleSport">{{isRunning ? '暂停' : '开始'}}</button>
+    <button bindtap="viewHistory">查看历史</button>
+  </view>
+</view>

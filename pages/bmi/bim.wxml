@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="title">
+    <text>BMI 计算器</text>
+  </view>
+
+  <!-- 身高输入框 -->
+  <view class="input-group">
+    <text>身高 (厘米)：</text>
+    <input type="number" bindinput="onHeightInput" placeholder="请输入身高" />
+  </view>
+
+  <!-- 体重输入框 -->
+  <view class="input-group">
+    <text>体重 (公斤)：</text>
+    <input type="number" bindinput="onWeightInput" placeholder="请输入体重" />
+  </view>
+
+  <!-- 计算按钮 -->
+  <button bindtap="calculateBMI" class="calculate-btn">计算 BMI</button>
+
+  <!-- 显示结果 -->
+  <view class="result">
+    <text>BMI 值：{{bmiValue}}</text>
+    <view>
+      <text>健康提示：{{bmiCategory}}</text>
+    </view>
+
+    <!-- 制定食谱按钮 -->
+    <view wx:if="{{showRecipeButton}}">
+      <button bindtap="goToRecipe" class="recipe-btn">制定食谱</button>
+    </view>
+  </view>
+</view>

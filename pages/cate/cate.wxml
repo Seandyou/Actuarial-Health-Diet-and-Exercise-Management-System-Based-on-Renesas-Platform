@@ -1,0 +1,109 @@
+<view class="container" style="background-color: {{backgroundColor}};">
+  <!-- 早餐 -->
+  <view class="meal-box" bindtap="toggleBreakfastSelection" style="background-color: {{breakfastColor}};">
+    <view class="meal-left">
+      <image src="/assets/icons/breakfast.png" class="meal-icon" />
+      <text class="meal-title">早餐</text>
+    </view>
+    <view class="meal-right">
+      <text class="meal-calories">{{breakfastCalories}} / 600 卡</text>
+    </view>
+    <view class="progress-bar-background">
+      <view class="progress-bar" style="width: {{breakfastProgress}}%; background-color: {{breakfastProgressColor}};"></view>
+    </view>
+  </view>
+
+  <view wx:if="{{showBreakfastOptions}}" class="options-box">
+    <input type="text" placeholder="搜索早餐食物" bindinput="searchBreakfast" class="search-input" />
+    <scroll-view scroll-y class="food-scroll-view">
+      <block wx:for="{{filteredBreakfastItems}}" wx:key="index">
+        <view class="food-item">
+          <text class="food-name">{{item.name}} ({{item.calories}}卡/份)</text>
+          <view class="counter">
+            <button bindtap="decreaseBreakfastItemCount" data-index="{{index}}" class="counter-btn" disabled="{{item.count <= 0}}">-</button>
+            <text class="counter-text">{{item.count}}</text>
+            <button bindtap="increaseBreakfastItemCount" data-index="{{index}}" class="counter-btn">+</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 午餐 -->
+  <view class="meal-box" bindtap="toggleLunchSelection" style="background-color: {{lunchColor}};">
+    <view class="meal-left">
+      <image src="/assets/icons/lunch.png" class="meal-icon" />
+      <text class="meal-title">午餐</text>
+    </view>
+    <view class="meal-right">
+      <text class="meal-calories">{{lunchCalories}} / 1000 卡</text>
+    </view>
+    <view class="progress-bar-background">
+      <view class="progress-bar" style="width: {{lunchProgress}}%; background-color: {{lunchProgressColor}};"></view>
+    </view>
+  </view>
+
+  <view wx:if="{{showLunchOptions}}" class="options-box">
+    <input type="text" placeholder="搜索午餐食物" bindinput="searchLunch" class="search-input" />
+    <scroll-view scroll-y class="food-scroll-view">
+      <block wx:for="{{filteredLunchItems}}" wx:key="index">
+        <view class="food-item">
+          <text class="food-name">{{item.name}} ({{item.calories}}卡/份)</text>
+          <view class="counter">
+            <button bindtap="decreaseLunchItemCount" data-index="{{index}}" class="counter-btn" disabled="{{item.count <= 0}}">-</button>
+            <text class="counter-text">{{item.count}}</text>
+            <button bindtap="increaseLunchItemCount" data-index="{{index}}" class="counter-btn">+</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 晚餐 -->
+  <view class="meal-box" bindtap="toggleDinnerSelection" style="background-color: {{dinnerColor}};">
+    <view class="meal-left">
+      <image src="/assets/icons/dinner.png" class="meal-icon" />
+      <text class="meal-title">晚餐</text>
+    </view>
+    <view class="meal-right">
+      <text class="meal-calories">{{dinnerCalories}} / 700 卡</text>
+    </view>
+    <view class="progress-bar-background">
+      <view class="progress-bar" style="width: {{dinnerProgress}}%; background-color: {{dinnerProgressColor}};"></view>
+    </view>
+  </view>
+
+  <view wx:if="{{showDinnerOptions}}" class="options-box">
+    <input type="text" placeholder="搜索晚餐食物" bindinput="searchDinner" class="search-input" />
+    <scroll-view scroll-y class="food-scroll-view">
+      <block wx:for="{{filteredDinnerItems}}" wx:key="index">
+        <view class="food-item">
+          <text class="food-name">{{item.name}} ({{item.calories}}卡/份)</text>
+          <view class="counter">
+            <button bindtap="decreaseDinnerItemCount" data-index="{{index}}" class="counter-btn" disabled="{{item.count <= 0}}">-</button>
+            <text class="counter-text">{{item.count}}</text>
+            <button bindtap="increaseDinnerItemCount" data-index="{{index}}" class="counter-btn">+</button>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!-- 总卡路里显示 -->
+  <view class="total-calories">
+    <text>总卡路里：{{totalCalories}} 卡</text>
+  </view>
+
+  <!-- 重置按钮 -->
+  <view class="reset-btn-container">
+    <button bindtap="resetMeals" class="reset-btn">重置餐食</button>
+  </view>
+
+  <!-- 超卡提示和去运动按钮 -->
+  <view wx:if="{{showExerciseButton}}" class="exercise-message">
+    <text class="exercise-text">{{calorieMessage}}</text>
+    <navigator url="/pages/sports/sports" class="exercise-btn-container">
+      <button bindtap="goToExercise" class="exercise-btn">去运动</button>
+    </navigator>
+  </view>
+</view>

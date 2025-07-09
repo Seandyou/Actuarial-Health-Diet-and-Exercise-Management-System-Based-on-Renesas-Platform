@@ -1,0 +1,55 @@
+.container {
+  padding: 30rpx;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+
+.go-to-bmi-btn {
+  padding: 20rpx;
+  font-size: 28rpx;
+  background-color: #4CAF50;
+  color: white;
+  width: 80%;
+  margin-top: 30rpx;
+  border-radius: 8rpx;
+  border: none;
+}
+
+.recipe-table {
+  margin-top: 40rpx;
+  width: 100%;
+  display: block;
+}
+
+.meal-table {
+  margin-top: 20rpx;
+  border-radius: 8rpx;
+  border: 1px solid #ddd;
+  padding: 20rpx;
+  background-color: #f9f9f9;
+}
+
+.meal-category {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  color: #333;
+}
+
+.table-row {
+  font-size: 28rpx;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row text {
+  font-size: 26rpx;
+  margin-top: 8rpx;
+  color: #333;
+}

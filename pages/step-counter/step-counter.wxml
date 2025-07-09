@@ -1,0 +1,19 @@
+<view class="container" style="background-image: url('{{backgroundImage}}');">
+  <view class="header">
+    <text class="title">今日步数</text>
+    <view class="top-right">
+      <image src="../../assets/icons/refresh.png" class="refresh-icon" bindtap="refreshSteps" />
+    </view>
+  </view>
+  <view class="date-card card">
+    <text>{{currentDate}}</text>
+  </view>
+  <view class="steps-card card">
+    <image src="../../assets/icons/steps.png" class="steps-icon" />
+    <text class="steps-value">{{steps}}</text>
+    <text class="steps-unit">步</text>
+  </view>
+  <view class="buttons">
+    <button class="btn" bindtap="goBack">返回主页</button>
+  </view>
+</view>

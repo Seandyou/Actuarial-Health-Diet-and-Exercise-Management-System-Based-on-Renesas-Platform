@@ -1,0 +1,134 @@
+<!--view是小程序的容器组件，可以之间的当div使用-->
+
+<!-- 轮播图区域 -->
+<view class="swiper">
+  <swiper 
+  autoplay  
+  circular="ture"
+  interval="2000" 
+  indicator-dots 
+  indicator-color="#fff"
+  indicator-active-color="#00af92"
+  >
+    <swiper-item>
+    <image src="../../assets/top/早上.jpeg" mode=""/>
+    </swiper-item>
+
+    <swiper-item>
+      <image src="../../assets/top/中午.jpg" mode=""/>
+    </swiper-item>
+
+    <swiper-item>
+      <image src="../../assets/top/晚上.jpg" mode=""/>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 公司信息 -->
+<view class="info">
+  <navigator url="/pages/bmi/bim">
+    <text>健康检测</text>
+  </navigator>
+  <navigator url="/pages/step-counter/step-counter">
+    <text>每日步数</text>
+  </navigator>
+<text>运动教学</text>
+<text>社区服务</text>
+</view>
+
+<!-- 商品导航 -->
+ <view class="good-nav">
+  <view>
+  <navigator url="/pages/signIn/signIn">
+    <image src="../../assets/middle/1.png"   mode=""/>
+    <text>每日签到</text>
+  </navigator>
+  </view>
+
+  <view>
+  <navigator url="/pages/food/food">
+    <image src="../../assets/middle/2.png"  mode=""/>
+    <text>食谱定制</text>
+  </navigator>
+  </view>
+
+  <view>
+  <navigator url="/pages/sports/sports">
+    <image src="../../assets/middle/3.png"  mode=""/>
+    <text>训练计划</text>
+  </navigator>
+  </view>
+
+  <view>
+  <navigator url="/pages/list/list">
+    <image src="../../assets/middle/4.png"  mode=""/>
+    <text>线上医生</text>
+  </navigator>
+  </view>
+  
+</view>
+
+ <!-- 推荐商品 -->
+ <view class="good-hot">
+  <scroll-view scroll-x class="scroll-x">
+
+    <view>
+      <view class="good-item">                                         
+        <image src="../../assets/down/体脂称.jpg" mode=""/>
+        <text>体脂秤</text>
+        <text>￥22.00</text>
+      </view>
+    </view>
+
+
+    <view>
+      <view class="good-item">
+        <image src="../../assets/down/瑜伽垫.jpg" mode=""/>
+        <text>瑜伽垫</text>
+        <text>￥40.00</text>
+      </view>
+    </view>
+
+
+    <view>
+      <view class="good-item">
+        <image src="../../assets/down/跳绳.jpg" mode=""/>
+        <text>跳绳</text>
+        <text>￥32.00</text>
+      </view>
+    </view>
+
+
+    <view>
+      <view class="good-item">
+        <image src="../../assets/down/4.gif" mode=""/>
+        <text>和泉纱雾</text>
+        <text>￥99999999</text>
+      </view>
+    </view>
+   
+  </scroll-view>
+ </view>
+
+ <!--  <scroll-view class="scroll-x" scroll-x>
+ <view>1</view>
+ <view>2</view>
+ <view>3</view>
+</scroll-view>
+
+<scroll-view class="scroll-y" scroll-y>
+ <view>1</view>
+ <view>2</view>
+ <view>3</view>
+</scroll-view>   -->
+
+<!-- src:图片资源地址 -->
+<!-- mode:图片剪裁和缩放模式 -->
+<!-- show-menu-by-longpress:长按显示菜单 -->
+<!-- lazy-load：图片懒加载，图片滑动一定距离后展示 -->
+
+<!-- user-select:长按选中文本 -->
+<!--  space:显示连续空格 -->
+
+<!-- 在进行页面跳转时，需要在路径的前面加/ -->
+<!-- <navigator url="/pages/list/list">到商品列表页面</navigator> -->

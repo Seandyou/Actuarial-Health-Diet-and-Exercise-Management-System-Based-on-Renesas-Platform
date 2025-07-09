@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="title">
+    <text>食谱定制</text>
+  </view>
+
+  <!-- 检查是否已计算 BMI -->
+  <view wx:if="{{!hasCalculatedBMI}}">
+    <text>请先计算 BMI，点击下方按钮进行计算。</text>
+    <button bindtap="goToBMIPage" class="go-to-bmi-btn">去计算 BMI</button>
+  </view>
+
+  <!-- 已计算 BMI，显示健康食谱 -->
+  <view wx:if="{{hasCalculatedBMI}}">
+    <text>根据您的 BMI，我们为您定制以下食谱：</text>
+
+    <!-- 每种 BMI 分类生成多个食谱 -->
+    <view class="recipe-table">
+      <block wx:for="{{mealTables}}" wx:key="index">
+        <view class="meal-table">
+          <view class="meal-category">
+            <text>食谱 {{index + 1}}</text> <!-- 食谱1, 食谱2, ... -->
+          </view>
+          <!-- 显示不同的食谱，包含早餐、午餐、晚餐 -->
+          <view class="table-row">
+            <text>早餐：{{item.breakfast}}</text>
+          </view>
+          <view class="table-row">
+            <text>午餐：{{item.lunch}}</text>
+          </view>
+          <view class="table-row">
+            <text>晚餐：{{item.dinner}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

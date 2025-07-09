@@ -1,0 +1,19 @@
+<view class="container">
+  <!-- 显示签到提示 -->
+  <view class="title">
+    <text>每日签到</text>
+  </view>
+
+  <!-- 显示签到状态 -->
+  <view class="status">
+    <text>{{signInStatus}}</text>
+  </view>
+
+  <!-- 签到按钮 -->
+  <button bindtap="signIn" class="sign-in-btn">{{buttonText}}</button>
+  
+  <!-- 显示签到日期 -->
+  <view class="date">
+    <text>上次签到日期：{{lastSignInDate}}</text>
+  </view>
+</view>
